@@ -30,6 +30,7 @@ app.post('/upload', function(req, res, next){
     form.on('file', function(name,file) {
 
         //stream it to localhost:4000 with same name
+        fs.createReadStream(file.path).pipe(request.post('localhost:4000/upload'))
 
         console.log(file.path);
     });
