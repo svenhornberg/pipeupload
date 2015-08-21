@@ -1,0 +1,27 @@
+{
+  "name": "pipeupload",
+  "version": "0.0.0",
+  "description": "pipe upload crossdomain",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svenhornberg/pipeupload"
+  },
+  "keywords": [
+    "pipe",
+    "upload"
+  ],
+  "author": "Sven Hornberg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svenhornberg/pipeupload/issues"
+  },
+  "dependencies": {
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "multiparty": "^4.1.2"
+  }
+}
