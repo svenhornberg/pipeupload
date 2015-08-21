@@ -22,6 +22,7 @@
   "dependencies": {
     "cors": "^2.7.1",
     "express": "^4.13.3",
-    "multiparty": "^4.1.2"
+    "multiparty": "^4.1.2",
+    "restler": "^3.3.0"
   }
 }

@@ -27,14 +27,21 @@ app.post('/upload', function(req, res, next){
         res.write('received upload:\n\n');
         res.end(util.inspect({fields: fields, files: files}));
     });
-    form.on('file', function(name,file) {
+    form.on('file', function(name, file) {
 
-        //stream it to localhost:4000 with same name
-        fs.createReadStream(file.path).pipe(request.post('localhost:4000/upload'))
+    var formData = {
+      file: {
+        value:  fs.createReadStream(file.path),
+        options: {
+          filename: file.originalFilename
+        }
+      }
+    };
+    console.log(formData);
 
-        console.log(file.path);
+    // Post the file to the upload server
+    request.post({url: 'http://localhost:4000/upload', formData: formData});
     });
-
 });
 
 var server = app.listen(3000, '0.0.0.0' ,function () {
